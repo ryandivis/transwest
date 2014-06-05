@@ -12,7 +12,7 @@ class Tickets {
 	public $query;
 
 	function __construct() {
-		$this->query = Ticket::with('business','user')->orderBy('updated_at','desc');
+		$this->query = Ticket::with('Business','User')->orderBy('updated_at','desc');
 	}
 
 	function permissions() {
