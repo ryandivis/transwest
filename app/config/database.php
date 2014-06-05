@@ -55,8 +55,8 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'ryandiv1_transwest',
-			'username'  => 'ryandiv1_transwe',
+			'database'  => 'eddb',
+			'username'  => 'ebroot',
 			'password'  => 'Reagan80!',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
