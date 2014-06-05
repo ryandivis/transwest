@@ -5,7 +5,7 @@ class Ticket extends Eloquent {
 	protected $table = 'tickets';
 
 	public function user() {
-		return $this->belongsTo('user','user_id');
+		return $this->belongsTo('User','user_id');
 	}
 
 	public function business() {
@@ -13,23 +13,23 @@ class Ticket extends Eloquent {
 	}
 
 	public function consenter() {
-		return $this->belongsTo('user','approved_by');
+		return $this->belongsTo('User','approved_by');
 	}
 
 	public function resolver() {
-		return $this->belongsTo('user','resolved_by');
+		return $this->belongsTo('User','resolved_by');
 	}
 
 	public function closer() {
-		return $this->belongsTo('user','closed_by');
+		return $this->belongsTo('User','closed_by');
 	}
 
 	public function event() {
-		return $this->hasOne('ticket','event_id');
+		return $this->hasOne('Ticket','event_id');
 	}
 
 	public function comments() {
-		return $this->hasMany('comment','ticket_id');
+		return $this->hasMany('Comment','ticket_id');
 	}
 
 }

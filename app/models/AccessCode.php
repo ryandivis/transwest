@@ -12,10 +12,10 @@ class AccessCode extends Eloquent {
     );
 
 	public function supervisor() {
-		return $this->belongsTo('user','supervisor_id');
+		return $this->belongsTo('User','supervisor_id');
 	}
 
 	public function business() {
-		return $this->belongsTo('business','bussiness_id');
+		return $this->belongsTo('Business','bussiness_id');
 	}
 }

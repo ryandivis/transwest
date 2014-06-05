@@ -17,11 +17,11 @@ class Comment extends Eloquent {
 	);
 
 	public function ticket() {
-		return $this->belongsTo('ticket','ticket_id');
+		return $this->belongsTo('Ticket','ticket_id');
 	}
 
 	public function user() {
-		return $this->belongsTo('user','user_id');
+		return $this->belongsTo('User','user_id');
 	}
 
 }

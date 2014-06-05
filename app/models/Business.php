@@ -10,11 +10,11 @@ class Business extends BaseModel {
 	);
 
 	public function users() {
-		return $this->hasMany('user','business_id');
+		return $this->hasMany('User','business_id');
 	}
 
 	public function vehicles() {
-		return $this->hasMany('vehicles','business_id');
+		return $this->hasMany('Vehicle','business_id');
 	}
 
 }

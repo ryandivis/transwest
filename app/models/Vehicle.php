@@ -19,15 +19,15 @@ class Vehicle extends Eloquent {
 	);
 
 	public function driver() {
-		return $this->hasOne('user','vehicle_id');
+		return $this->hasOne('User','vehicle_id');
 	}
 
 	public function business() {
-		return $this->belongsTo('business','business_id');
+		return $this->belongsTo('Business','business_id');
 	}
 
 	public function mileage() {
-		return $this->hasMany('mileage','vehicle_id');
+		return $this->hasMany('Mileage','vehicle_id');
 	}
 
 }
