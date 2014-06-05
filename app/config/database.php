@@ -43,8 +43,6 @@ return array(
 	| choice installed on your machine before you begin development.
 	|
 	*/
-	--host=aa575mne1r5k0d.cp8fhnwxeuyd.us-west-2.rds.amazonaws.com --user=ebroot --password=Reagan80!
-
 	'connections' => array(
 
 		'sqlite' => array(
@@ -55,10 +53,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'aa575mne1r5k0d.cp8fhnwxeuyd.us-west-2.rds.amazonaws.com',
-			'database'  => 'ebdb',
-			'username'  => 'ebroot',
-			'password'  => 'Reagan80!',
+			'host'      => 'localhost',
+			'database'  => 'ryandiv1_transwest',
+			'username'  => 'ryandivis',
+			'password'  => 'password',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
