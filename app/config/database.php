@@ -55,7 +55,7 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
+			'host'      => 'aa575mne1r5k0d.cp8fhnwxeuyd.us-west-2.rds.amazonaws.com',
 			'database'  => 'ebdb',
 			'username'  => 'ebroot',
 			'password'  => 'Reagan80!',
