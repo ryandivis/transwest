@@ -43,6 +43,7 @@ return array(
 	| choice installed on your machine before you begin development.
 	|
 	*/
+	--host=aa575mne1r5k0d.cp8fhnwxeuyd.us-west-2.rds.amazonaws.com --user=ebroot --password=Reagan80!
 
 	'connections' => array(
 
@@ -55,7 +56,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'eddb',
+			'database'  => 'ebdb',
 			'username'  => 'ebroot',
 			'password'  => 'Reagan80!',
 			'charset'   => 'utf8',
