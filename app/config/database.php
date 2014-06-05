@@ -54,7 +54,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'forge',
+			'database'  => 'transwest',
 			'username'  => 'forge',
 			'password'  => 'Oh0WbXuVeiX83yxdvvd2',
 			'charset'   => 'utf8',
