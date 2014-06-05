@@ -9,7 +9,7 @@ class Ticket extends Eloquent {
 	}
 
 	public function business() {
-		return $this->belongsTo('business','business_id');
+		return $this->belongsTo('business');
 	}
 
 	public function consenter() {
