@@ -54,9 +54,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'ryandiv1_transwest',
-			'username'  => 'ryandivis',
-			'password'  => 'password',
+			'database'  => 'forge',
+			'username'  => 'forge',
+			'password'  => 'Oh0WbXuVeiX83yxdvvd2',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
