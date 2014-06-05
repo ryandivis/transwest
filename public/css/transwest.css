@@ -1,0 +1,38 @@
+.table .top{
+	background: #4cbded;
+	font-size: 14px;
+	color: #fff;
+	-webkit-border-radius: 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0;
+	-ms-border-radius: 10px 10px 0 0;
+	-o-border-radius: 10px 10px 0 0;
+	border-radius: 10px 10px 0 0;
+	padding: 10px 10px;
+	position: relative;
+}
+.table .top h3{
+	color:#fff;
+	padding: 0px;
+	margin:0px;
+	font-size: 14px;
+}
+.table-hover tbody tr{
+	cursor: pointer;
+}
+.comment{
+	position: relative;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+.comment:after{
+	content: '';
+	position: absolute;
+	background: #eee;
+	height: 1px;
+	width: 100%;
+	bottom: 0px;
+	left:0px;
+}
+.comment span{
+	padding-left: 20px;
+}

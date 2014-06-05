@@ -1,0 +1,33 @@
+<div class="modal-header">
+	<h3>Create Ticket</h3>
+</div>
+<div class="modal-body">
+	<form name="ticketForm" role="form" novalidate>
+		<div ng-if="users.length == 1">
+			<div class="form-group">
+				<label for="business">Business</label>
+				<input type="text" name="business" class="form-control" disabled="disabled" ng-value="users.0.business.name" />
+				<input type="hidden" ng-model="$parent.ticket.business_id" name="business_id" ng-value="business.id" />
+			</div>
+			<div class="form-group">
+				<label for="driver">Driver</label>
+				<input type="text" name="driver" class="form-control" disabled="disabled" ng-value="users.0.firstname + ' ' + users.0.lastname" />
+				<input type="hidden" ng-model="$parent.ticket.user_id" name="user_id" ng-value="user.id" />
+			</div>
+		</div>
+		<div ng-if="users.length > 1">
+			<div class="form-group">
+				<label for="driver">Driver</label>
+				<select name="driver" ng-change="log()" ng-model="$parent.ticket.user" ng-options="user.firstname + ' ' + user.lastname group by user.business.name for user in users "></select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="issue">Issue</label>
+			<textarea ng-model="$parent.ticket.issue" name="issue" class="form-control" required></textarea>
+		</div>
+	</form>
+</div>
+<div class="modal-footer">
+	<a href="#" ng-click="submit(ticketForm.$valid)" class="btn btn-sm btn-primary" ng-disabled="ticketForm.$invalid">Submit</a>
+	<a href="#" ng-click="cancel()" class="btn btn-sm btn-default">Cancel</a>
+</div>

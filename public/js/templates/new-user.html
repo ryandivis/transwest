@@ -1,0 +1,57 @@
+<div class="modal-header">
+	<h3>Create User</h3>
+</div>
+<div class="modal-body">
+	<form name="userForm" role="form" novalidate>
+		<div class="form-group">
+			<label for="role">Role*</label>
+			<select name="role" ng-model="$parent.user.user_role" class="form-control" ng-options="user_role.role for user_role in user_roles"></select>
+		</div>
+		<div ng-if="businesses.length > 1" class="form-group">
+			<label for="role">Business*</label>
+			<select name="role" ng-model="$parent.user.business" class="form-control" ng-options="user_role.role for user_role in user_roles"></select>
+		</div>
+		<div ng-if="businesses.length == 1" class="form-group">
+			<label for="role">Business*</label>
+			<input type="hidden" name="business_id" ng-model="$parent.user.business_id" class="form-control" ng-value="businesses[0].id"></select>
+			<input type="text" disabled="disabled" class="form-control" ng-value="businesses[0].name"></select>
+		</div>
+		<div ng-if="business" class="form-group">
+			<label for="role">Business*</label>
+			<input type="text" disabled="disabled" class="form-control" ng-value="business.name"></select>
+		</div>
+		<div class="form-group">
+			<label for="supervisor">Supervisor</label>
+			<select name="supervisor" ng-model="$parent.user.supervisor" class="form-control" ng-options="user.firstname + ' ' + user.lastname for user in supervisors "></select>
+		</div>
+		<div class="form-group">
+			<label for="vehicle">Vehicle</label>
+			<select name="vehicle" ng-model="$parent.user.vehicle" class="form-control" ng-options="vehicle.fleet_id + ' ' + vehicle.year + ' ' + vehicle.make + ' ' + vehicle.model for vehicle in vehicles "></select>
+		</div>
+		<div class="form-group">
+			<label for="firstname">First Name*</label>
+			<input type="text" ng-model="$parent.user.firstname" name="firstname" class="form-control" required />
+		</div>
+		<div class="form-group">
+			<label for="lastname">Last Name*</label>
+			<input type="text" ng-model="$parent.user.lastname" name="lastname" class="form-control" required />
+		</div>
+		<div class="form-group">
+			<label for="email">Email*</label>
+			<input type="email" ng-model="$parent.user.email" name="email" class="form-control" required />
+		</div>
+		<div class="form-group">
+			<label for="work_phone">Work Phone*</label>
+			<input type="text" ng-model="$parent.user.work_phone" name="work_phone" class="form-control" required />
+		</div>
+		<div class="form-group">
+			<label for="personal_phone">Personal Phone*</label>
+			<input type="text" ng-model="$parent.user.personal_phone" name="personal_phone" class="form-control" required />
+		</div>
+		<p><em>* required fields</em></p>
+	</form>
+</div>
+<div class="modal-footer">
+	<a href="#" ng-click="submit(userForm.$valid)" class="btn btn-sm btn-primary" ng-disabled="userForm.$invalid">Submit</a>
+	<a href="#" ng-click="cancel()" class="btn btn-sm btn-default">Cancel</a>
+</div>

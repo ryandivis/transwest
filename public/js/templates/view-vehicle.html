@@ -1,0 +1,58 @@
+<div class="modal-header">
+	<h3>View Vehicle</h3>
+</div>
+<div class="modal-body">
+	<table class="horizontal-table table table-bordered">
+		<tr>
+			<th>Business</th>
+			<td><< vehicle.business.name >></td>
+		</tr>
+		<tr>
+			<th>Driver</th>
+			<td><< vehicle.driver.firstname + " " + vehicle.driver.lastname >></td>
+		</tr>
+		<tr>
+			<th>Fleet ID</th>
+			<td><< vehicle.fleet_id >></td>
+		</tr>
+		<tr>
+			<th>VIN</th>
+			<td><< vehicle.vin >></td>
+		</tr>
+		<tr>
+			<th>Year</th>
+			<td><< vehicle.year >></td>
+		</tr>
+		<tr>
+			<th>Make</th>
+			<td><< vehicle.make >></td>
+		</tr>
+		<tr>
+			<th>Model</th>
+			<td><< vehicle.model >></td>
+		</tr>
+		<tr>
+			<th>Engine</th>
+			<td><< vehicle.engine >></td>
+		</tr>
+		<tr>
+			<th>Mileage</th>		
+			<td><< vehicle.mileage[0].mileage >></td>
+		</tr>
+	</table>
+	<hr />
+	<form name="mileageForm" role="form" novalidate>
+		<div class="form-group">
+			<label for="mileage">Update Mileage</label>
+			<div class="input-group">
+				<input type="text" class="form-control" name="mileage" ng-model="$parent.miles.mileage">
+				<span class="input-group-btn">
+					<button ng-click="updateMileage()" class="btn btn-primary" type="button">Update</button>
+				</span>
+		    </div><!-- /input-group -->
+	    </div>
+	</form>
+</div>
+<div class="modal-footer">
+	<a href="#" ng-click="cancel()" class="btn btn-sm btn-default">Close</a>
+</div>

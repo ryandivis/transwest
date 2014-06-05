@@ -1,0 +1,74 @@
+<div class="modal-header">
+	<h3>Ticket #<< ticket.id >></h3>
+</div>
+<div class="modal-body">
+	<table class="table table-bordered">
+		<tr>
+			<tH>Business:</th>
+			<td><< ticket.business.name >></td>
+		</tr>
+		<tr>
+			<th>Submitted On:</th>
+			<td><< ticket.created_at >></td>
+		</tr>
+		<tr>
+			<th>Submitted By:</th>
+			<td><< ticket.user.firstname + " " + ticket.user.lastname >></td>
+		</tr>
+		<tr ng-if="ticket.approved">
+			<th>Approved On:</th>
+			<td><< ticket.approved_timestamp >></td>
+		</tr>
+		<tr ng-if="ticket.approved">
+			<th>Approved By:</th>
+			<td><< ticket.consenter.firstname + " " + ticket.consenter.lastname >></td>
+		</tr>
+		<tr ng-if="ticket.resolved">
+			<th>Resolved On:</th>
+			<td><< ticket.resolved_timestamp >></td>
+		</tr>
+		<tr ng-if="ticket.resolved">
+			<th>Resolved By:</th>
+			<td><< ticket.resolver.firstname + " " + ticket.resolver.lastname >></td>
+		</tr>
+		<tr ng-if="ticket.closed">
+			<th>Closed On:</th>
+			<td><< ticket.closed_timestamp >></td>
+		</tr>
+		<tr ng-if="ticket.closed">
+			<th>Closed By:</th>
+			<td><< ticket.closer.firstname + " " + ticket.closer.lastname >></td>
+		</tr>
+		<tr>
+			<th>Vehicle:</th>
+			<td>
+				<em>VIN:</em> << ticket.user.vehicle.vin >> <br/>
+				<em>Year:</em> << ticket.user.vehicle.year >> <br/>
+				<em>Make:</em> << ticket.user.vehicle.make >> <br/>
+				<em>Model:</em> << ticket.user.vehicle.model >> <br/>
+				<em>Engine:</em> << ticket.user.vehicle.engine >> <br/>
+			</td>
+		</tr>
+		<tr>
+			<th>Issue:</th>
+			<td><< ticket.issue >></td>
+		</tr>
+	</table>
+	<h4>Comments</h4>
+	<div ng-repeat="comment in ticket.comments">
+		<div class="comment">
+			<p><b><< comment.created_at >></b><br/> << comment.comment >></p>
+			<span>- << comment.user.firstname + " " + comment.user.lastname >></span>
+		</div>
+	</div>
+	<form name="ticketForm" role="form" novalidate>
+		<div class="form-group">
+			<label for="issue">Add a Comment</label>
+			<textarea ng-model="$parent.comment.comment" name="issue" class="form-control"></textarea>
+		</div>
+		<a href="#" ng-click="submit(ticketForm.$valid)" class="btn btn-sm btn-primary" ng-disabled="ticketForm.$invalid">Add Comment</a>
+	</form>
+</div>
+<div class="modal-footer">
+	<a href="#" ng-click="cancel()" class="btn btn-sm btn-default">Close</a>
+</div>
